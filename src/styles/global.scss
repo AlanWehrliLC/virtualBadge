@@ -1,16 +1,23 @@
-html, body {
-  height: 100%;
+* {
+  margin: 0;
 }
 
+:root {
+  --black: #202024;
+  --gray: #e1e1e6;
+}
+
+html,
 body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+#__next {
+  height: 100%;
   display: grid;
   place-items: center;
-}
-
-h1 {
-  font-size: 1.5rem;
-}
-
-a {
-  text-decoration: none;
 }
