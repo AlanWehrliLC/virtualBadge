@@ -27,6 +27,8 @@ export default function Home() {
       </head>
 
       <main className={styles.main}>
+      <div className={styles.cord}></div>
+    <div className={styles.hole}></div>
         <section className={styles.container}>
           <div className={styles.avatar}>
             <span>

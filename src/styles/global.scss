@@ -5,14 +5,23 @@
 :root {
   --black: #202024;
   --gray: #e1e1e6;
+  --background-black: #121214;
 }
 
 html,
 body {
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
 
-  background-color: var(--black);
+  background-color: var(--background-black);
+}
+
+body{
+  background-image: url(/backlight.svg);
+  background-color: #121214;
+  background-position: center;
+  background-size: cover;
 }
 
 #__next {

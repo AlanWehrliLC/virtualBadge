@@ -1,5 +1,6 @@
 .main {
   background: url(/backgroundMobile.svg);
+  background-repeat: no-repeat;
   width: 375px;
   height: 100%;
 }
@@ -55,7 +56,7 @@
 }
 
 .clutteredList {
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   list-style: none;
   padding: 0;
@@ -63,4 +64,74 @@
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+
+  li {
+    img {
+      border-radius: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .main {
+    background: url(/backgroundTablet.svg);
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 100%;
+  }
+
+  .avatar {
+    width: 10rem;
+    margin: 12.593rem auto 0;
+    position: relative;
+  }
+
+  .clutteredList {
+    margin-top: 1rem;
+
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .main {
+    background: url(/backgroundDesktop.svg);
+    background-repeat: no-repeat;
+    width: 358px;
+    height: 540px;
+    border-radius: 10px;
+  }
+
+  .avatar {
+    width: 10rem;
+    margin: 4.5rem auto 0;
+    position: relative;
+  }
+
+  .cord {
+    position: absolute;
+    z-index: 2;
+    width: 80px;
+    height: 830px;
+    background: linear-gradient(90deg, #ff1e1e -100%, #ffcd1e 150%);
+    border-radius: 0 0 3px 3px;
+    margin-top: -50rem;
+    margin-left: 8.75rem;
+  }
+
+  .hole {
+    position: absolute;
+    background: #121214;
+    z-index: 1;
+    width: 100px;
+    height: 12px;
+    margin-left: 8.15rem;
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+  }
 }
