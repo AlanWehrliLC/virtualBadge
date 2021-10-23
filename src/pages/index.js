@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from './home.module.scss'
 
 export default function Home() {
-  const [gitHub,setGitHub] = useState({})
+  const [gitHub, setGitHub] = useState({})
 
   const linksSociaMedia = {
     github: 'AlanWehrliLC',
@@ -14,11 +14,15 @@ export default function Home() {
 
   const url = `https://api.github.com/users/${linksSociaMedia.github}`
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(url)
-    .then(response => {return response.json()})
-    .then(data => {setGitHub(data)})
-  },[])
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setGitHub(data)
+      })
+  }, [])
 
   return (
     <>
@@ -27,14 +31,17 @@ export default function Home() {
       </head>
 
       <main className={styles.main}>
-      <div className={styles.cord}></div>
-    <div className={styles.hole}></div>
+        <div className={styles.cord}></div>
+        <div className={styles.hole}></div>
         <section className={styles.container}>
           <div className={styles.avatar}>
             <span>
               <img src="/logo.svg" alt="Selo Éva Resolve" />
             </span>
-            <img src={gitHub.avatar_url} alt="Foto Alan Wehrli" />
+            <img
+              src={gitHub.avatar_url ? gitHub.avatar_url : 'default-avatar.png'}
+              alt="Foto Alan Wehrli"
+            />
           </div>
 
           <h1 className={styles.nameAW}>{gitHub.name}</h1>
@@ -47,9 +54,7 @@ export default function Home() {
             {gitHub.login}
           </a>
 
-          <p className={styles.about}>
-          {gitHub.bio}
-          </p>
+          <p className={styles.about}>{gitHub.bio}</p>
 
           <ul className={styles.clutteredList}>
             <li>
